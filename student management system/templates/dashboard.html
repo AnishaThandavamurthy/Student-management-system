@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      .navbar-brand img{
+        width: 30px;
+        height:30px;
+      }
+   
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            display: inline-block;
+            width: 22%;
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin: 5px 0;
+        }
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .chart {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pie-chart {
+            width: 45%;
+            text-align: center;
+        }
+        .bar-chart {
+            width: 150%;
+            text-align: left;
+        }
+        canvas {
+            width: 100% !important;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+   
+    </style>
+  </head>
+
+<body>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/dashboard">
+          <img src="/static/vvitlogo.jpeg"/><span></span><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Vidya Vikas Institute of Engineering & Technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          
+          </a>
+          
+        
+        <!-- Align the button to the left -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">My DashBoard</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/assessment">Assessment</a>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Timetable
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="/tt">Class Timetable</a></li>
+                  <li><a class="dropdown-item" href="/exam">Exam Timetable</a>
+                   </ul>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/attendance">Attendance</a>
+                
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/lesson">Lesson Plan</a>
+                
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/note">Notification</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/profile">My Profile</a>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+  
+      
+   
+
+
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p>36</p>
+        </div>
+        <div class="card">
+            <h3>Total Students</h3>
+            <p>300</p>
+        </div>
+        <div class="card">
+            <h3>Total Subjects</h3>
+            <p>26</p>
+        </div>
+        <div class="card">
+            <h3>Total Classes</h3>
+            <p>11</p>
+        </div>
+
+        <div class="chart">
+            <div class="pie-chart">
+                <h3>Teaching Employee</h3>
+                <canvas id="teachingPie"></canvas>
+            </div>
+            <div class="pie-chart">
+                <h3>Non-Teaching Employee</h3>
+                <canvas id="nonTeachingPie"></canvas>
+            </div>
+        </div>
+
+        <div class="bar-chart">
+            <h3>Attendance</h3>
+            <canvas id="attendanceBar"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Pie chart for Teaching Employees
+        var teachingCtx = document.getElementById('teachingPie').getContext('2d');
+        var teachingPieChart = new Chart(teachingCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active Male', 'Active Female'],
+                datasets: [{
+                    data: [12, 15],
+                    backgroundColor: ['#36a2eb', '#ff6384']
+                }]
+            }
+        });
+
+        // Pie chart for Non-Teaching Employees
+        var nonTeachingCtx = document.getElementById('nonTeachingPie').getContext('2d');
+        var nonTeachingPieChart = new Chart(nonTeachingCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active Male', 'Active Female', 'Deactive Female'],
+                datasets: [{
+                    data: [3, 5, 5],
+                    backgroundColor: ['#36a2eb', '#ff6384', '#ffcd56']
+                }]
+            }
+        });
+
+        // Bar chart for Attendance
+        var attendanceCtx = document.getElementById('attendanceBar').getContext('2d');
+        var attendanceBarChart = new Chart(attendanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Thursday (12/2/2024)', 'Friday (18/2/2024)', 'Saturday (19/2/2024)', 'Monday (21/2/2024)'],
+                datasets: [{
+                    label: 'Employee',
+                    backgroundColor: '#ffcd56',
+                    data: [93, 99, 93, 93]
+                }, {
+                    label: 'Student',
+                    backgroundColor: '#36a2eb',
+                    data: [81, 91, 93, 96]
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>

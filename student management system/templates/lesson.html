@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan Accordion with Checkboxes</title>
+    <link rel="stylesheet" href="/static/lesson.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>.navbar-brand img{
+  width: 30px;
+  height:30px;
+}</style>
+
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/dashboard">
+            <img src="/static/vvitlogo.jpeg"/><span></span><span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Vidya Vikas Institute of Engineering & Technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            
+            </a>
+            
+          
+          <!-- Align the button to the left -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">My DashBoard</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/assessment">Assessment</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Timetable
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="/tt">Class Timetable</a></li>
+                    <li><a class="dropdown-item" href="/exam">Exam Timetable</a>
+                     </ul>
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link" href="/attendance">Attendance</a>
+                  
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link" href="/lesson">Lesson Plan</a>
+                  
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link" href="/note">Notificatios</a>
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link" href="/profile">My Profile</a>
+                </li>
+              </ul>
+             
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    <div class="container">
+        <h1>Lesson Plan</h1>
+
+        <!-- Subject 1 Accordion -->
+        <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(0)">CRYPTOGRAPHY AND NETWORK SECURITY </div>
+            <div class="accordion-content">
+                <label><input type="checkbox" name="crypto-lesson" value="module1" checked> Module 1: Classical Encryption Techniques</label><br>
+                <label><input type="checkbox" name="crypto-lesson" value="module2"> Module 2: Public-Key Cryptography and RSA</label><br>
+                <label><input type="checkbox" name="crypto-lesson" value="module3"> Module 3: User Authentication</label><br>
+                <label><input type="checkbox" name="crypto-lesson" value="module4"> Module 4: Public-Key Cryptography and RSA</label><br>
+                <label><input type="checkbox" name="crypto-lesson" value="module5"> Module 5: Electronic Mail Security</label><br>
+            </div>
+        </div>
+
+        <!-- Subject 2 Accordion -->
+        <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(1)">CLOUD COMPUTING </div>
+            <div class="accordion-content">
+                <label><input type="checkbox" name="cloud-lesson" value="module1" checked> Module 1: Introduction to Cloud Computings</label><br>
+                <label><input type="checkbox" name="cloud-lesson" value="module2"> Module 2: Virtualization</label><br>
+                <label><input type="checkbox" name="cloud-lesson" value="module3"> Module 3: Cloud Computing Architecture</label><br>
+                <label><input type="checkbox" name="cloud-lesson" value="module4"> Module 4: Cloud Security</label><br>
+                <label><input type="checkbox" name="cloud-lesson" value="module5"> Module 5: Cloud Platforms in Industry </label><br>
+            </div>
+        </div>
+
+        <!-- Subject 3 Accordion -->
+        <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(2)">USER INTERFACE DESIGN</div>
+            <div class="accordion-content">
+                <label><input type="checkbox" name="UI-lesson" value="module1" checked> Module 1: The User Interface-Introduction</label><br>
+                <label><input type="checkbox" name="UI-lesson" value="module2"> Module 2:The User Interface Design process</label><br>
+                <label><input type="checkbox" name="UI-lesson" value="module3"> Module 3:System menus and navigation schemes</label><br>
+                <label><input type="checkbox" name="UI-lesson" value="module4"> Module 4: Windows</label><br>
+                <label><input type="checkbox" name="UI-lesson" value="module5"> Module 5: Screen based controls</label><br>
+            </div>
+        </div>
+        <!-- Subject 4 Accordion -->
+        <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(3)">NOSQL DATABASE</div>
+            <div class="accordion-content">
+                <label><input type="checkbox" name="sql-lesson" value="module1" checked> Module 1: Intoduction to NOSQL</label><br>
+                <label><input type="checkbox" name="sql-lesson" value="module2"> Module 2: Distribution Models</label><br>
+                <label><input type="checkbox" name="sql-lesson" value="module3"> Module 3: Map-Reduce</label><br>
+                <label><input type="checkbox" name="sql-lesson" value="module4"> Module 4:Document Databases</label><br>
+                <label><input type="checkbox" name="sql-lesson" value="module5"> Module 5:Graph Databases</label><br>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function toggleAccordion(index) {
+            const contents = document.querySelectorAll('.accordion-content');
+            contents[index].classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

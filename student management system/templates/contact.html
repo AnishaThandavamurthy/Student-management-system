@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif; /* Set a clean font */
+        }
+
+        .background-image {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        .background-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('static/image1.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Adjust opacity here */
+            z-index: 0; /* Behind the content */
+        }
+
+        .contact-section {
+            padding: 50px 0;
+            color: #333; /* Dark gray text for better readability */
+            z-index: 1; /* Make sure it's above the background */
+            position: relative; /* To contain the absolute children */
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        h1, h2 {
+            color: #2c3e50; /* Dark blue color for headings */
+        }
+
+        .btn-primary {
+            background-color: #3498db; /* Blue button color */
+            border: none; /* Remove border */
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+        .navbar {
+            background-color: #7facd6;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            color:white;
+        }
+    
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+        button.color{
+            background-color: #ffcc00; /* Gold color for buttons */
+            border: none;
+            color: #0055a4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="static/logo.jpg" alt="School Logo">   Vidya Vikas Institute of Engineering and Technology
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/loguser"><button class="color" type="button" >Login</button></a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="background-image">
+        <div class="container contact-section">
+            <h1 class="text-center">Contact Us</h1>
+            <div class="row">
+                <div class="col-md-6 contact-info">
+                    <h2>Our Contact Information</h2>
+                    <p><strong>Address:</strong>#127-128, Mysuru - Bannur Road, Alanahally, Alanahally Post, Mysuru - 570 028</p>
+                    <p><strong>Email:</strong> principalvviet@gmail.com</p>
+                    <p><strong>Phone:</strong> (0821) 2471232 / 2471635<br>93418 88801 / 99802 00463</p>
+                    <p><strong>Facebook:</strong> vviet_adda</p>
+                    <p><strong>Instagram:</strong> vistara_vviet</p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" action="/contact" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

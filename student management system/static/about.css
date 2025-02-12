@@ -1,0 +1,121 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #7facd6;
+    padding: 15px;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffcc00;
+}
+
+.color {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.color:hover {
+    background-color: #ffb700;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.about-us h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.about-us p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Card Layout */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.card p, .card ul {
+    color: #666;
+}
+
+.card ul {
+    list-style: disc;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+    background-color: #7facd6;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+width:100%;
+}

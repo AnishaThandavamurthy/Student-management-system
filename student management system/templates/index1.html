@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Register</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Form Styles */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Link Styles */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <table border="1">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date of Birth</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Course</th>
+      <th>Year of Study</th>
+        <th>Delete</th>
+       
+        {% for data in registers %}
+        <tr>
+          <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.dob}}</td>
+        <td>{{data.gender}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.course}}</td>
+        <td>{{data.yos}}</td>
+          <td>{{data.user_name}}</td>
+          <td>{{data.password}}</td>
+          
+          <td><a href="/delete/{{data.id}}" type="button">Delete Student</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <a href="/login" type="button">login </a>
+</body>
+</html>
